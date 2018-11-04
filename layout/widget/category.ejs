@@ -13,6 +13,7 @@
                 function layArticles(posts) {
                     var classifiedArticles = {'_root': []};
                     posts.forEach(function(post,i){
+                            console.log(post.slug);
                             var last_post_cat;
                             var post_info = {
                             "title": post.title,
@@ -84,7 +85,7 @@
                 } 
                 if(branch.articles && branch.articles.length) {
                     branch.articles.forEach(function(post){
-                        %> <li class="file<%- (is_post() && post._id == page._id) ? ' active' : '' %>"><a href="<%- post.path %>"><%- post.slug %></a></li> <%
+                        %> <li class="file<%- (is_post() && post._id == page._id) ? ' active' : '' %>"><a href="<%- post.path %>"><%- post.title %></a></li> <%
                     });
                 }
              %> </ul> <%
